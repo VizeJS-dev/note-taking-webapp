@@ -17,8 +17,8 @@ export const ForgotPassword = () => {
 
     return (
         <>
-            <div className="w-[90%] md:w-[540px] h-[623] bg-neutral-0 rounded-lg shadow-lg p-6">
-                <div className="flex flex-col items-center space-y-6">
+            <div className="w-[90%] md:w-[522px] h-[372px] bg-neutral-0 rounded-lg shadow-lg p-6">
+                <div className="flex flex-col items-center">
                     {/*// Logo*/}
                     <div className="flex items-center space-x-2">
                         <img src="/src/assets/images/logo.svg" alt="notes logo"/>
@@ -26,8 +26,8 @@ export const ForgotPassword = () => {
 
                     {/*Welcome Text*/}
                     <div className="text-center spacy-y-1">
-                        <h1 className="font-family-sans font-bold text-neutral-950 preset-1">Welcome to Note</h1>
-                        <p className="preset-5 font-family-sans text-neutral-600">Please login to continue</p>
+                        <h1 className="font-family-sans font-bold text-neutral-950 preset-1">Forgotten your password?</h1>
+                        <p className="preset-5 font-family-sans text-neutral-600">Enter your email below, and we'll send you a link to reset it.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="w-full">

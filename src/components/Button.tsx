@@ -16,7 +16,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}
                 disabled={isDisabled}
                 className={cn(
-                    'relative inline-flex items-center justify-center gap-2 px-4 py-2 preset-4 font-medium rounded-8 transition-all duration-200',
+                    'relative inline-flex items-center justify-center gap-spacing-100 py-spacing-150 px-spacing-200 preset-4 font-medium rounded-8 transition-all duration-200',
                     "focus:outline-none focus:ring-2 focus:ring-offset-2",
                     variant === 'primary' ? cn(
                         "bg-blue-500 text-white",

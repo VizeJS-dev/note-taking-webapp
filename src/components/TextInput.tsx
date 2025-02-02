@@ -1,6 +1,7 @@
 import {forwardRef, InputHTMLAttributes, useState} from 'react';
 import {Eye, EyeOff, Info} from 'lucide-react';
 import {cn} from '../lib/utils.ts'
+import {Link} from 'react-router-dom';
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string,
@@ -23,12 +24,12 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                         <label className="block font-medium font-family-sans preset-4 text-neutral-950 mb-1">
                             {label}
                         </label>
-                        {isPassword && <a href="../pages/ForgotPassword.tsx" className="underline preset-5 text-neutral-600 hover:text-neutral-950">Forgot</a>}
+                        {isPassword && <Link to="/reset-password" className="underline preset-5 text-neutral-600 hover:text-neutral-950">Forgot</Link>}
                     </div>
                 )}
                 <div className="relative">
                     <input ref={ref} type={inputType}
-                           className={cn("w-full px-3 py-2 rounded-8 transition-all duration-200 outline-none",
+                           className={cn("w-full py-spacing-150 px-spacing-200 gap-spacing-100 rounded-8 transition-all duration-200 outline-none",
                         "flex items-center gap-2",
                         variant === 'default' ? "border border-neutral-300 bg-white" : undefined,
                         variant === 'outline' ? "border-2 border-neutral-900 bg-white" : undefined,
