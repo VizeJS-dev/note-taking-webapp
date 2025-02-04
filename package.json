@@ -13,7 +13,13 @@
     "@reduxjs/toolkit": "^2.5.0",
     "@tailwindcss/vite": "^4.0.0",
     "autoprefixer": "^10.4.20",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.474.0",
+    "nodemailer": "^6.10.0",
     "postcss": "^8.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -23,6 +29,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/tailwindcss": "^3.0.11",
@@ -36,5 +44,18 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5"
-  }
+  },
+  "description": "![Design preview for the Note-taking web app coding challenge](./preview.jpg)",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VizeJS-dev/note-taking-webapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VizeJS-dev/note-taking-webapp/issues"
+  },
+  "homepage": "https://github.com/VizeJS-dev/note-taking-webapp#readme"
 }
