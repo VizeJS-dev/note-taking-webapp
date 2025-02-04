@@ -1,7 +1,8 @@
 // import {useState} from "react";
-import {Login} from "./pages/Login.tsx";
+import {Login} from "./pages/Auth/Login.tsx";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import {ForgotPassword} from "./pages/ForgotPassword.tsx";
+import {ForgotPassword} from "./pages/Auth/ForgotPassword.tsx";
+import {ResetYourPassword} from "./pages/Auth/ResetYourPassword.tsx";
 
 function App() {
     // const [theme, setTheme] = useState<'theme-light' | 'theme-dark'>('theme-light')
@@ -12,7 +13,8 @@ function App() {
           <Router>
               <Routes>
                   <Route path="/" element={<Login/>}/>
-                  <Route path="reset-password" element={<ForgotPassword/>}/>
+                  <Route path="forgot-password" element={<ForgotPassword/>}/>
+                  <Route path="reset-password" element={<ResetYourPassword/>}/>
               </Routes>
           </Router>
       </div>

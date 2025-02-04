@@ -9,10 +9,11 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: string,
     variant?: 'default' | 'outline' | 'error';
     showPasswordToggle?: boolean;
+    forgotPassword?: boolean;
 }
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-    ({ className, type = 'text', label, hint, error, variant = 'default', showPasswordToggle, ...props }, ref) => {
+    ({ className, type = 'text', label, hint, error, variant = 'default', forgotPassword, showPasswordToggle, ...props }, ref) => {
         const [showPassword, setShowPassword] = useState(false);
         const isPassword = type === 'password';
         const inputType = isPassword && showPassword ? 'text' : type;
@@ -24,7 +25,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                         <label className="block font-medium font-family-sans preset-4 text-neutral-950 mb-1">
                             {label}
                         </label>
-                        {isPassword && <Link to="/reset-password" className="underline preset-5 text-neutral-600 hover:text-neutral-950">Forgot</Link>}
+                        {forgotPassword && <Link to="/forgot-password" className="underline preset-5 text-neutral-600 hover:text-neutral-950">Forgot</Link>}
                     </div>
                 )}
                 <div className="relative">

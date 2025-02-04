@@ -1,8 +1,8 @@
 import * as React from "react";
 import {useState} from "react";
-import TextInput from "../components/TextInput.tsx";
-import Button from "../components/Button.tsx";
-import googleIcon from "../assets/images/icon-google.svg";
+import TextInput from "../../components/TextInput.tsx";
+import Button from "../../components/Button.tsx";
+import googleIcon from "../../assets/images/icon-google.svg";
 
 export const Login = () => {
     // const [showPassword, setShowPassword] = useState(false);
@@ -41,6 +41,7 @@ export const Login = () => {
                         type="email"
                         placeholder={"email@example.com"}
                         variant={!email && isLoading ? "error" : undefined}
+                        forgotPassword={true}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <TextInput
