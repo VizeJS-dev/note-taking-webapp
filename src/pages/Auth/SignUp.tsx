@@ -5,7 +5,7 @@ import Button from "../../components/Button.tsx";
 import googleIcon from "../../assets/images/icon-google.svg";
 import {Link} from "react-router-dom";
 
-export const Login = () => {
+export const SignUp = () => {
     // const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -31,8 +31,8 @@ export const Login = () => {
 
                 {/*Welcome Text*/}
                 <div className="text-center gap  -spacing-100">
-                    <h1 className="font-family-sans font-bold text-neutral-950 preset-1">Welcome to Note</h1>
-                    <p className="preset-5 font-family-sans text-neutral-600">Please login to continue</p>
+                    <h1 className="font-family-sans font-bold text-neutral-950 preset-1">Create Your Account</h1>
+                    <p className="preset-5 font-family-sans text-neutral-600">Sign up to start organizing your notes and boost your productivity.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col w-full gap-spacing-200">
@@ -42,7 +42,6 @@ export const Login = () => {
                         type="email"
                         placeholder={"email@example.com"}
                         variant={!email && isLoading ? "error" : undefined}
-                        forgotPassword={true}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <TextInput
@@ -50,6 +49,7 @@ export const Login = () => {
                         label="Password"
                         type="password"
                         showPasswordToggle={true}
+                        hint="At least 8 characters"
                         variant={!password && isLoading ? "error" : undefined}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -58,7 +58,7 @@ export const Login = () => {
                         isLoading={isLoading}
                         className="w-full"
                         variant="primary"
-                    >Login</Button>
+                    >Sign Up</Button>
                 </form>
 
                 <hr className="w-full border-neutral-200"/>
@@ -72,8 +72,8 @@ export const Login = () => {
                 </div>
 
                 <hr className="w-full border-neutral-200"/>
-                <p className="font-family-sans preset-5 text-neutral-600">No account yet?
-                    <Link to="sign-up" className="ml-1 text-neutral-950">Sign Up</Link>
+                <p className="font-family-sans preset-5 text-neutral-600">Already have an account?
+                    <Link to="/" className="ml-1 text-neutral-950">Login</Link>
                 </p>
             </div>
         </>
