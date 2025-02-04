@@ -7,10 +7,15 @@ export const ResetYourPassword = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
+    const isPasswordValid = password.length >= 8;
 
     const handleSubmit = async (e: React.FormEvent) => {
-        if (password !== passwordConfirm) {
+        if (password !== passwordConfirm ) {
             alert("Passwords do not match");
+        }
+        if (!isPasswordValid) {
+            alert("Password must be at least 8 characters long");
+            return;
         }
         e.preventDefault();
         setIsLoading(true);

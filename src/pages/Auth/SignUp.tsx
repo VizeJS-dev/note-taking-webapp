@@ -4,15 +4,22 @@ import TextInput from "../../components/TextInput.tsx";
 import Button from "../../components/Button.tsx";
 import googleIcon from "../../assets/images/icon-google.svg";
 import {Link} from "react-router-dom";
+import logo from "../../assets/images/logo.svg";
 
 export const SignUp = () => {
     // const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const isPasswordValid = password.length >= 8;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!isEmailValid || !isPasswordValid) {
+            alert("Please enter valid credentials.");
+            return;
+        }
         setIsLoading(true);
         await new Promise(resolve => setTimeout(resolve, 2000));
         console.log({email, password});
@@ -26,7 +33,7 @@ export const SignUp = () => {
 
                 {/*// Logo*/}
                 <div className="flex items-center gap-[10px]">
-                    <img src="/src/assets/images/logo.svg" alt="notes logo"/>
+                    <img src={logo} alt="notes logo"/>
                 </div>
 
                 {/*Welcome Text*/}

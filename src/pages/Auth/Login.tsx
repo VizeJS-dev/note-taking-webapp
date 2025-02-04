@@ -6,13 +6,18 @@ import googleIcon from "../../assets/images/icon-google.svg";
 import {Link} from "react-router-dom";
 
 export const Login = () => {
-    // const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const isPasswordValid = password.length >= 8;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!isEmailValid || !isPasswordValid) {
+            alert("Please enter valid credentials.");
+            return;
+        }
         setIsLoading(true);
         await new Promise(resolve => setTimeout(resolve, 2000));
         console.log({email, password});
@@ -42,7 +47,6 @@ export const Login = () => {
                         type="email"
                         placeholder={"email@example.com"}
                         variant={!email && isLoading ? "error" : undefined}
-                        forgotPassword={true}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <TextInput
@@ -50,6 +54,7 @@ export const Login = () => {
                         label="Password"
                         type="password"
                         showPasswordToggle={true}
+                        forgotPassword={true}
                         variant={!password && isLoading ? "error" : undefined}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -65,7 +70,7 @@ export const Login = () => {
                 <div className="flex flex-col w-full items-center gap-spacing-200 pt-[24px]">
                     <p className="font-family-sans preset-5 text-neutral-600">Or log in with:</p>
                     <Button
-                        icon={<img src={googleIcon} alt="Google icon"/>}
+                        icon={<img src={googleIcon} alt="Log in with Google"/>}
                         className="w-full"
                         variant="border"
                     >Google</Button>
